@@ -8,8 +8,7 @@ public class Questions {
     public Questions() {
     }
 
-    public Questions(int id, String questions) {
-        this.id = id;
+    public Questions(String questions) {
         this.questions = questions;
     }
 

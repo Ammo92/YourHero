@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
+import android.view.View;
 
 public class Requete {
 
@@ -36,17 +37,18 @@ public class Requete {
         return bdd;
     }
 
-    public long insertInfo(Questions questions){
+    public long insertQuestion(Questions questions){
         open();
         ContentValues values = new ContentValues();
         values.put(COL_QUESTIONS, questions.getQuestions());
         return  bdd.insert(TABLE_QUESTIONS, null, values);
     }
 
+
     public Questions getInfoWithId(int id){
         open();
         //Récupère dans un Cursor les valeurs correspondant à un livre contenu dans la BDD (ici on sélectionne le livre grâce à son titre)
-        Cursor c = bdd.query(TABLE_QUESTIONS, new String[] {COL_ID, COL_QUESTIONS}, COL_ID + " LIKE  " + id , null, null, null, null);
+        Cursor c = bdd.query(TABLE_QUESTIONS, new String[] {COL_QUESTIONS}, COL_ID + " LIKE  " + id , null, null, null, null);
         Log.e("Requete : ",String.valueOf(c));
         return cursorToLivre(c);
     }

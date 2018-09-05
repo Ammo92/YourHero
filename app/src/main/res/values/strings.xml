@@ -4,4 +4,6 @@
     <string name="Play">Play</string>
     <string name="Historic">Historic</string>
     <string name="exit">Exit</string>
+    <string name="yes">YES</string>
+    <string name="no">NO</string>
 </resources>
