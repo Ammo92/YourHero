@@ -4,6 +4,156 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HeroActivity">
+    tools:context=".HeroActivity"
+    android:background="#BF360C">
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guidelineDivide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5"/>
+
+    <ImageView
+        android:id="@+id/imgHero"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/hero"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/guidelineDivide"/>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFEB3B"
+        app:layout_constraintTop_toBottomOf="@id/guidelineDivide"
+         />
+
+    <ImageView
+        android:id="@+id/load20"
+        android:layout_width="75dp"
+        android:layout_height="70dp"
+        android:src="@drawable/char20"
+        app:layout_constraintTop_toBottomOf="@id/guidelineDivide"/>
+
+    <ImageView
+        android:id="@+id/load50"
+        android:layout_width="75dp"
+        android:layout_height="70dp"
+        android:src="@drawable/char50"
+        app:layout_constraintTop_toBottomOf="@id/load20"/>
+
+    <ImageView
+        android:id="@+id/load70"
+        android:layout_width="75dp"
+        android:layout_height="70dp"
+        android:src="@drawable/char70"
+        app:layout_constraintTop_toBottomOf="@id/load50"
+        android:layout_marginLeft="111dp" />
+
+    <ImageView
+        android:id="@+id/load90"
+        android:layout_width="75dp"
+        android:layout_height="70dp"
+        android:src="@drawable/char90"
+        app:layout_constraintTop_toBottomOf="@id/load70"
+        android:layout_marginLeft="111dp" />
+
+    <TextView
+        android:id="@+id/intelligence"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Intelligence"
+        app:layout_constraintTop_toTopOf="@id/load20"
+        app:layout_constraintBottom_toBottomOf="@id/load20"
+        app:layout_constraintLeft_toRightOf="@id/load20"
+        android:textColor="#BF360C"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:layout_marginLeft="10dp"
+        />
+
+    <TextView
+        android:id="@+id/force"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Strength"
+        app:layout_constraintTop_toTopOf="@id/load50"
+        app:layout_constraintBottom_toBottomOf="@id/load50"
+        app:layout_constraintLeft_toRightOf="@id/load50"
+        android:textColor="#BF360C"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/intelligence"
+        />
+
+    <TextView
+        android:id="@+id/speed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Speed"
+        app:layout_constraintTop_toTopOf="@id/load70"
+        app:layout_constraintBottom_toBottomOf="@id/load70"
+        app:layout_constraintLeft_toRightOf="@id/load70"
+        android:textColor="#BF360C"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/intelligence"
+        />
+
+    <TextView
+        android:id="@+id/durability"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Durability"
+        app:layout_constraintTop_toTopOf="@id/load90"
+        app:layout_constraintBottom_toBottomOf="@id/load90"
+        app:layout_constraintLeft_toRightOf="@id/load90"
+        android:textColor="#BF360C"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/intelligence"
+        />
+
+    <TextView
+        android:id="@+id/heroName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#BF360C"
+        android:text="Hero's Name"
+        app:layout_constraintTop_toTopOf="@id/load20"
+        app:layout_constraintBottom_toBottomOf="@id/load20"
+        app:layout_constraintLeft_toRightOf="@id/intelligence"
+        android:layout_marginLeft="70dp"
+        android:textSize="20sp"
+        />
+
+    <TextView
+        android:id="@+id/heroAlias"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#BF360C"
+        android:text="Hero's Alias"
+        app:layout_constraintTop_toBottomOf="@id/heroName"
+        app:layout_constraintStart_toStartOf="@id/heroName"
+        android:layout_marginTop="10dp"
+        android:textSize="20sp"
+        />
+
+    <TextView
+        android:id="@+id/heroTeam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#BF360C"
+        android:text="Hero's Team"
+        app:layout_constraintTop_toBottomOf="@id/heroAlias"
+        app:layout_constraintStart_toStartOf="@id/heroName"
+        android:layout_marginTop="10dp"
+        android:textSize="20sp"
+        />
+
 
 </android.support.constraint.ConstraintLayout>
