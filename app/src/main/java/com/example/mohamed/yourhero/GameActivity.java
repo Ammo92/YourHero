@@ -21,7 +21,7 @@ public class GameActivity extends AppCompatActivity {
 
     Questions test;
     int cpt = 0;
-    int[] intArray = new int[] {0,0,0,0,0,0,0,0,0,0,0};
+    int[] intArray = new int[] {0,0,0,0,0,0,0,0,0,0,0,0,0};
 
 
     @Override
@@ -52,7 +52,7 @@ public class GameActivity extends AppCompatActivity {
 
         test = requete.getInfoWithId(randomNumber);
         cpt++;
-        intArray[0] = randomNumber;
+        intArray[cpt] = randomNumber;
         numQuestions.setText(cpt + "/10");
         displayQuestion.setText(test.getQuestions());
 
@@ -61,20 +61,24 @@ public class GameActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                int randomNumber = randomID.nextInt(15 - 1) + 1;
-                cpt++;
-                for(int i = 0; i < intArray.length ; i++ ){
-                    if(intArray[i] == randomNumber){
-                        randomNumber = randomNumber + 1;
-                        i = 0;
-                    }
-                }
-                test = requete.getInfoWithId(randomNumber);
-                numQuestions.setText(cpt + "/10");
-                displayQuestion.setText(test.getQuestions());
-                if(cpt == 10){
+                if (cpt == 10) {
                     Intent intent = new Intent(GameActivity.this, HeroActivity.class);
                     startActivity(intent);
+                } else {
+
+                    int randomNumber = randomID.nextInt(15 - 1) + 1;
+                    cpt++;
+                    for (int i = 0; i < intArray.length; i++) {
+                        if (intArray[i] == randomNumber) {
+                            randomNumber = randomNumber + 1;
+                            i = 0;
+                        }
+                    }
+                    intArray[cpt] = randomNumber;
+                    test = requete.getInfoWithId(randomNumber);
+                    numQuestions.setText(cpt + "/10");
+                    displayQuestion.setText(test.getQuestions());
+
                 }
             }
         });
@@ -83,20 +87,24 @@ public class GameActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                int randomNumber = randomID.nextInt(15 - 1) + 1;
-                cpt++;
-                for(int i = 0; i < intArray.length ; i++ ){
-                    if(intArray[i] == randomNumber){
-                        randomNumber = randomNumber + 1;
-                        i = 0;
-                    }
-                }
-                test = requete.getInfoWithId(randomNumber);
-                numQuestions.setText(cpt + "/10");
-                displayQuestion.setText(test.getQuestions());
-                if(cpt == 10){
+                if (cpt == 10) {
                     Intent intent = new Intent(GameActivity.this, HeroActivity.class);
                     startActivity(intent);
+                } else {
+
+                    int randomNumber = randomID.nextInt(15 - 1) + 1;
+                    cpt++;
+                    for (int i = 0; i < intArray.length; i++) {
+                        if (intArray[i] == randomNumber) {
+                            randomNumber = randomNumber + 1;
+                            i = 0;
+                        }
+                    }
+                    intArray[cpt] = randomNumber;
+                    test = requete.getInfoWithId(randomNumber);
+                    numQuestions.setText(cpt + "/10");
+                    displayQuestion.setText(test.getQuestions());
+
                 }
             }
         });

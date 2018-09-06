@@ -14,6 +14,13 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.5"/>
 
+    <android.support.constraint.Guideline
+        android:id="@+id/guidelineVert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.18"/>
+
     <ImageView
         android:id="@+id/imgHero"
         android:layout_width="wrap_content"
@@ -32,44 +39,81 @@
         app:layout_constraintTop_toBottomOf="@id/guidelineDivide"
          />
 
-    <ImageView
-        android:id="@+id/load20"
-        android:layout_width="75dp"
-        android:layout_height="70dp"
-        android:src="@drawable/char20"
-        app:layout_constraintTop_toBottomOf="@id/guidelineDivide"/>
+    <at.grabner.circleprogress.CircleProgressView
+        android:id="@+id/loadIntelligence"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="8dp"
+        app:cpv_barColor="#BF360C"
+        app:cpv_barWidth="10dp"
+        app:cpv_maxValue="100"
+        app:cpv_rimColor="#FFC107"
+        app:cpv_rimWidth="10dp"
+        app:cpv_textColor="#FFC107"
+        app:cpv_value="20"
+        app:layout_constraintTop_toBottomOf="@id/guidelineDivide"
+        app:layout_constraintRight_toLeftOf="@id/guidelineVert"
+        />
 
-    <ImageView
-        android:id="@+id/load50"
-        android:layout_width="75dp"
-        android:layout_height="70dp"
-        android:src="@drawable/char50"
-        app:layout_constraintTop_toBottomOf="@id/load20"/>
 
-    <ImageView
-        android:id="@+id/load70"
-        android:layout_width="75dp"
-        android:layout_height="70dp"
-        android:src="@drawable/char70"
-        app:layout_constraintTop_toBottomOf="@id/load50"
-        android:layout_marginLeft="111dp" />
 
-    <ImageView
-        android:id="@+id/load90"
-        android:layout_width="75dp"
-        android:layout_height="70dp"
-        android:src="@drawable/char90"
-        app:layout_constraintTop_toBottomOf="@id/load70"
-        android:layout_marginLeft="111dp" />
+    <at.grabner.circleprogress.CircleProgressView
+        android:id="@+id/loadStrength"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:layout_constraintTop_toBottomOf="@id/loadIntelligence"
+        app:layout_constraintStart_toStartOf="@id/loadIntelligence"
+        app:cpv_barColor="#BF360C"
+        app:cpv_rimColor="#FFC107"
+        app:cpv_maxValue="100"
+        app:cpv_value="50"
+        app:cpv_rimWidth="10dp"
+        app:cpv_barWidth="10dp"
+        app:cpv_textColor="#FFC107"
+        android:layout_marginTop="10dp"
+        />
+
+
+    <at.grabner.circleprogress.CircleProgressView
+        android:id="@+id/loadSpeed"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:layout_constraintTop_toBottomOf="@id/loadStrength"
+        app:cpv_barColor="#BF360C"
+        app:cpv_rimColor="#FFC107"
+        app:cpv_maxValue="100"
+        app:cpv_value="70"
+        app:cpv_rimWidth="10dp"
+        app:cpv_barWidth="10dp"
+        app:cpv_textColor="#FFC107"
+        app:layout_constraintStart_toStartOf="@id/loadIntelligence"
+        android:layout_marginTop="10dp"
+        />
+
+    <at.grabner.circleprogress.CircleProgressView
+        android:id="@+id/loadDurability"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:layout_constraintTop_toBottomOf="@id/loadSpeed"
+        app:cpv_barColor="#BF360C"
+        app:cpv_rimColor="#FFC107"
+        app:cpv_maxValue="100"
+        app:cpv_value="90"
+        app:cpv_rimWidth="10dp"
+        app:cpv_barWidth="10dp"
+        app:cpv_textColor="#FFC107"
+        app:layout_constraintStart_toStartOf="@id/loadIntelligence"
+        android:layout_marginTop="10dp"
+        />
 
     <TextView
         android:id="@+id/intelligence"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Intelligence"
-        app:layout_constraintTop_toTopOf="@id/load20"
-        app:layout_constraintBottom_toBottomOf="@id/load20"
-        app:layout_constraintLeft_toRightOf="@id/load20"
+        app:layout_constraintTop_toTopOf="@id/loadIntelligence"
+        app:layout_constraintBottom_toBottomOf="@id/loadIntelligence"
+        app:layout_constraintLeft_toRightOf="@id/loadIntelligence"
         android:textColor="#BF360C"
         android:textSize="15sp"
         android:textStyle="bold"
@@ -81,9 +125,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Strength"
-        app:layout_constraintTop_toTopOf="@id/load50"
-        app:layout_constraintBottom_toBottomOf="@id/load50"
-        app:layout_constraintLeft_toRightOf="@id/load50"
+        app:layout_constraintTop_toTopOf="@id/loadStrength"
+        app:layout_constraintBottom_toBottomOf="@id/loadStrength"
+        app:layout_constraintLeft_toRightOf="@id/loadStrength"
         android:textColor="#BF360C"
         android:textSize="15sp"
         android:textStyle="bold"
@@ -95,9 +139,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Speed"
-        app:layout_constraintTop_toTopOf="@id/load70"
-        app:layout_constraintBottom_toBottomOf="@id/load70"
-        app:layout_constraintLeft_toRightOf="@id/load70"
+        app:layout_constraintTop_toTopOf="@id/loadSpeed"
+        app:layout_constraintBottom_toBottomOf="@id/loadSpeed"
+        app:layout_constraintLeft_toRightOf="@id/loadSpeed"
         android:textColor="#BF360C"
         android:textSize="15sp"
         android:textStyle="bold"
@@ -109,9 +153,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Durability"
-        app:layout_constraintTop_toTopOf="@id/load90"
-        app:layout_constraintBottom_toBottomOf="@id/load90"
-        app:layout_constraintLeft_toRightOf="@id/load90"
+        app:layout_constraintTop_toTopOf="@id/loadDurability"
+        app:layout_constraintBottom_toBottomOf="@id/loadDurability"
+        app:layout_constraintLeft_toRightOf="@id/loadDurability"
         android:textColor="#BF360C"
         android:textSize="15sp"
         android:textStyle="bold"
@@ -124,8 +168,8 @@
         android:layout_height="wrap_content"
         android:textColor="#BF360C"
         android:text="Hero's Name"
-        app:layout_constraintTop_toTopOf="@id/load20"
-        app:layout_constraintBottom_toBottomOf="@id/load20"
+        app:layout_constraintTop_toTopOf="@id/loadIntelligence"
+        app:layout_constraintBottom_toBottomOf="@id/loadIntelligence"
         app:layout_constraintLeft_toRightOf="@id/intelligence"
         android:layout_marginLeft="70dp"
         android:textSize="20sp"
@@ -154,6 +198,8 @@
         android:layout_marginTop="10dp"
         android:textSize="20sp"
         />
+
+
 
 
 </android.support.constraint.ConstraintLayout>
